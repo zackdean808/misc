@@ -11,21 +11,14 @@ salesTotal = 0.00
 userLoggedInStatus = True
 choiceValue = -1
 S = []
+DEBUG = True 
+
 
 # For testing the application
-S.append(["z", "d", 10, 20, 30, 40])
-S.append(["g", "m", 1000, 20, 4000, 5000])
+if DEBUG: 
+    S.append(["z", "d", 10, 20, 30, 40])
+    S.append(["g", "m", 1000, 20, 4000, 5000])
 
-
-"""
-for i in S:
-    print ("main array") 
-    for j in i:
-        print ("Inner: " + str(j)) 
-        print ("Inner is digit: " + str(j.isdigit()))
-"""        
-
-#num = int(input("Please enter a number between 0 and 7: "))
 
 def registerNewUser():
     print ("New User")
@@ -58,10 +51,12 @@ def calculateCommission():
                 tempTotal += value
         commTotal = tempTotal * calculateCommPercentage(tempTotal)
         S[countOuter].append(commTotal)
-        print ("Total w/o Com: " + str(tempTotal))
-        print ("Comm Total: " + str(commTotal))
+        if DEBUG:
+            print ("Total w/o Com: " + str(tempTotal))
+            print ("Comm Total: " + str(commTotal))
         salesTotal = commTotal + tempTotal
-        print ("Sales + Comm Total: " + str(salesTotal))
+        if DEBUG: 
+            print ("Sales + Comm Total: " + str(salesTotal))
         S[countOuter].append(salesTotal)
         countOuter += 1
 
