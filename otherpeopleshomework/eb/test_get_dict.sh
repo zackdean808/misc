@@ -8,5 +8,6 @@ do
 	if [ $OUT = "Correct" ]
 	then 
 		echo $LINE
+		break
 	fi 
 done < testfile

@@ -8,5 +8,6 @@ do
 	if [ $OUT = "Correct" ]
 	then 
 		echo $LINE
+		echo $OUT $LINE >> matches
 	fi 
 done < /usr/share/dict/linux.words
